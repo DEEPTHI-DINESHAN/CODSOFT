@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/49dfcf6279.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+    <div id="header">
+        <div class="center-content">
+            <img src="deepthi.jpg" alt="Circular Image" class="circular-image">
+            <h1>DEEPTHI KK</h1>       
+        </div>
+            <div class="right">
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#Project">Project</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+             </div>
+    </div>
+    </nav>
+
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+              <div class="about-col-1">
+                 <img src="meehh.jpg">
+              </div>
+              <div class="about-col-2">
+                   <h1 class="sub-title">About Me</h1> 
+                    <p>Hey i'm Deepthi KK, <br>I am currently pursuing a Master of Computer Applications(MCA)<br>
+                         from Central University of Haryana, where i am deepening my expertise in computer science<br>
+                         with a solid foundation in programming. I am passionate about leveraging technology to<br>
+                         solve complex problems. My academic experience has been complemented by hands-on practical<br>
+                         knowledege in python,c,c++,web development. Eager to apply my skills in a professional setting.<br>
+                         I am committed to continuous learning and contributing to innovative tech solutions.</p> 
+                         
+                         <div class="tab-titles">
+                            <p class="tab-links active-links" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links"  onclick="opentab('education')">Qualification </p>
+                         </div>
+                         <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Web Development</span></li>
+                                <li><span>python</span></li>
+                                <li><span>c programming</span></li>
+                                <li><span>c++ programming</span></li>
+                            </ul>
+                         </div>
+
+                         <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2023 - current</span><br>Pursuing MCA from Central University of Haryana</li>
+                                <li><span>2020 - 2023</span><br>B.Sc.Computer science from college of applied science(ihrd)</li>
+                                <li><span>2018 - 2020</span><br>Higher Secondary Education</li>
+                            </ul>
+                         </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<div id="Project">
+    <div class="container">
+        <h1 class="sub-title">Project</h2>
+        <div class="project">
+            <img src="careerGuidance.jpg" alt="project 1">
+            <div class="project-info">
+                <h2>Career Guidance App</h2>
+                <div class="project-details">
+                    <p><strong class="strong">Goal:</strong> The goal of this project is to guide the students in choosing <br>right career after school and providing a lot of career options along<br> with the details of institution having specific career opportunities.</p>
+                    <p><strong>Responsibilities:</strong> Analysis, Design and Testing.</p>
+                    <p><strong>Skills:</strong> HTML, Python, Mysql.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+
+
+<div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-solid fa-paper-plane"></i>kkdeepthi2018@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i>7736919912</p>
+             <div class="social-icons">
+                <a href="instagram.com/dee_pthi37"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+             </div>
+             <a href="images\RESUME.pdf" download class="btn btn2">Download Resume</a>
+        </div>
+        <div class="contact-right">
+            <form name='submit-to-google-sheet'>
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" requiured>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Deepthi<i class="fa-solid fa-heart"></i></p>
+    </div>
+</div>
+
+
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");        
+        var tabcontents = document.getElementsByClassName("tab-contents");        
+        
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-links");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-links");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyimFRLc8sXmf8267cp-STITqsKG6mmgMtf15J_oMS2CthBLSHfSuFfpBwUK9Q6jbTZXw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    width:100%;
+    height: 100vh;
+    background: url(pexels-nurseryart-346885.jpg);
+    background-size: cover;
+    font-family: 'poppins',sans-serif;
+}
+nav{
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu a{
+    text-decoration: none;
+    color: rgb(17, 17, 133);
+    padding: 10px 20px;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.menu a:hover{
+    border: 1px solid indianred;
+    background: transparent;
+}
+.register a{
+    text-decoration: none;
+    color: rgb(17, 17, 133);
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 8px;
+    background: rgb(196, 47, 47);
+    margin-right: 30px;
+}
+.register a:hover{
+    border: 1px solid indianred;
+    background: transparent;
+}
+.h-text{
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    max-width: 650px;
+    transform: translate(-50px,-50px);
+    text-align: center;
+    color: #fff;
+}
+.h-text span{
+    letter-spacing: 5px;
+}
+.h-text h1{
+    font-size: 3.5em;
+}
+.h-text a{
+    text-decoration: none;
+    background: rgb(196, 47, 47);
+    padding: 10px 20px;
+    color: #fff;
+    letter-spacing: 5px;
+}
+.h-text a:hover{
+    border: 1px solid indianred;
+    background: transparent;
+}
